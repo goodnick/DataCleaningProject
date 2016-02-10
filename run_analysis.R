@@ -59,5 +59,5 @@ write.csv(tidy_data, file = file.path("output", "tidy_data.txt"), row.names = FA
 
 
 summary_data <- tidy_data %>% group_by(activity, subject) %>% select(-dataset) %>% summarise_each(funs(mean))
-write.csv(summary_data, file = file.path("output", "summary_data.txt"), row.names = FALSE)
+write.table(summary_data, file = file.path("output", "summary_data.txt"), row.names = FALSE)
 
